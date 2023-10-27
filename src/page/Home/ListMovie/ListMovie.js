@@ -17,7 +17,7 @@ export default function ListMovie() {
           });
   }, []);
   return (
-    <div className='grid grid-cols-4 container gap-10'>
+    <div className='grid grid-cols-1 lg:grid-cols-4 container gap-10'>
       {movieArr.slice(0,12).map((item,index) => { 
         return <Card
         className='items-center'

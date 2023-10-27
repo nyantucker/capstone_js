@@ -3,7 +3,7 @@ import { BASE_URL, configHeaders } from "./config"
 
 export let getListMovie = () => { 
     return axios ({
-        url: `${BASE_URL}/QuanLyPhim/LayDanhSachPhim?maNhom=GP01`,
+        url: `${BASE_URL}/QuanLyPhim/LayDanhSachPhim?maNhom=GP09`,
         method: "GET",
         headers: configHeaders(),
     })
@@ -17,7 +17,7 @@ export let getDetailMovie = (id) => {
 }
 export let getMovieByTheater = () => {
     return axios ({
-        url: `${BASE_URL}/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP01`,
+        url: `${BASE_URL}/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP02`,
         method: "GET",
         headers: configHeaders(),
     })
@@ -36,3 +36,10 @@ export let getDsPhongVe = (maLichChieu) => {
         headers: configHeaders(),
     })
 }
+export let getDataSlider = () => { 
+    return axios ({
+        url: `${BASE_URL}/QuanLyPhim/LayDanhSachBanner`,
+        method: "GET",
+        headers: configHeaders(),
+    })
+ }
