@@ -15,11 +15,11 @@ export default function Header() {
         window.location.href="/login"
      }
     let renderUserNav = () => {
-        let classBtn = "success border-2 border-black rounded-xl px-7 py-3"
+        let classBtn = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
         if (info) {
             return (
             <>
-            <span>{info.hoTen}</span>
+            <span className='text-xl font-bold dark:text-white text-slate-500 hover:text-blue-600'>{info.hoTen}</span>
             <button onClick={handleLogout} className={classBtn}>Đăng xuất</button>
             </> 
             )
@@ -34,7 +34,8 @@ export default function Header() {
      }
   return (
     <div className='h-20 flex items-center justify-between shadow-lg px-20'>
-        <span className='text-3xl font-medium text-red-600 animate-pulse'> CyberFlix</span>
+        <span className='text-3xl font-medium text-red-600'> <a href='/'>
+            <img style={{width:200}} src="./img_capstone/logo.png" alt /> </a> </span>
         <div className='space-x-5'>{renderUserNav()}</div>
     </div>
   )

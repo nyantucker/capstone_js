@@ -22,3 +22,17 @@ export let getMovieByTheater = () => {
         headers: configHeaders(),
     })
 }
+export let getMovieShowTime = (id) => { 
+    return axios ({
+        url: `${BASE_URL}/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${id}`,
+        method: "GET",
+        headers: configHeaders(),
+    })
+ }
+export let getDsPhongVe = (maLichChieu) => {
+    return axios ({
+        url: `${BASE_URL}//QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${maLichChieu}`,
+        method: "GET",
+        headers: configHeaders(),
+    })
+}

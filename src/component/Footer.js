@@ -2,9 +2,10 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className='container grid grid-cols-3'>
+    <div className='bg-black'>
+        <div className='container grid grid-cols-3 text-white pb-10'>
         <div>
-            <h6>TIX</h6>
+            <h6 className='text-lg font-bold dark:text-white py-5'>TIX</h6>
             <div className='grid grid-cols-2'>
             <a href="">FAQ</a>
             <a href="">Thỏa thuận sử dụng</a>
@@ -13,7 +14,7 @@ export default function Footer() {
             </div>
         </div>
         <div>
-            <h6>Đối tác</h6>
+            <h6 className='text-lg font-bold dark:text-white py-5'>Đối tác</h6>
             <div className='grid grid-cols-4 gap-5'>
             <a className='h-10 w-10' href=""><img src="./img_capstone/logo_doitac/1.png" alt /></a>
             <a className='h-10 w-10' href=""><img src="./img_capstone/logo_doitac/2.png" alt /></a>
@@ -39,16 +40,18 @@ export default function Footer() {
         </div>
         <div className='grid grid-cols-2'>
             <div>
-                <h6>MOBILE APP</h6>
+                <h6 className='text-lg font-bold dark:text-white py-5'>MOBILE APP</h6>
                 <img className='h-10 w-10 mr-2' style={{display:"inline"}} src="./img_capstone/apps/ios.png"/>
                 <img className='h-10 w-10 mr-2' style={{display:"inline"}} src="./img_capstone/apps/android.png"/>
             </div>
             <div>
-                <h6>SOCAIL</h6>
+                <h6 className='text-lg font-bold dark:text-white py-5'>SOCAIL</h6>
                 <img className='h-10 w-10 mr-2' style={{display:"inline"}} src="./img_capstone/apps/facebook.png"/>
                 <img className='h-10 w-10 mr-2' style={{display:"inline"}} src="./img_capstone/apps/zalo.png"/>
             </div>
         </div>
     </div>
+    </div>
+    
   )
 }

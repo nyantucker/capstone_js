@@ -39,23 +39,24 @@ export default function TabMovie() {
         return {
             key: index,
             label: <img className='w-16' src={heThongRap.logo} alt=""></img>,
-            children: <Tabs style={{height:500}} tabPosition='left' items={heThongRap.lstCumRap.map((cumRap) => { 
+            children: <Tabs style={{height:700}} tabPosition='left' items={heThongRap.lstCumRap.map((cumRap) => { 
                 return {
                     key: cumRap.tenCumRap,
                     label: <div className='text-left w-96 whitespace-normal'>
                         <p className='text-blue-600 font-medium'>{cumRap.tenCumRap}</p>
                         <p>{cumRap.diaChi}</p>
                     </div>,
-                    children: <div style={{height:500, overflow:"scroll"}}>{renderDsPhim(cumRap.danhSachPhim)}</div>,
+                    children: <div style={{height:700, overflow:"auto"}}>{renderDsPhim(cumRap.danhSachPhim)}</div>,
                 }
              })}/>,
         }
      })
    }
   return (
-    <div className='container shadow p-3 rounded border-2 border-l-black'>
+    <div className='container'>
         <Tabs
-        style={{height:500}}
+        className='container shadow rounded'
+        style={{height:700}}
         tabPosition='left'
         defaultActiveKey="1" 
         items={handListHeThong()} 

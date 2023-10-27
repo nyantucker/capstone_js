@@ -4,12 +4,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './page/Home/Home';
 import Login from './page/Login/Login';
 import Layout from './template/Layout';
+import DetailMovie from './page/DetailMovie/DetailMovie';
+import Booking from './page/DetailMovie/ShowTime/Booking/Booking';
 
 function App() {
   return (
   <BrowserRouter>
   <Routes>
     <Route path="/" element={<Layout><Home/></Layout>}/>
+    <Route path="/movie/:id" element={<Layout><DetailMovie/></Layout>}/>
+    <Route path="/movie/lich-chieu/:maLichChieu" element={<Layout><Booking/></Layout>}/>
     <Route path="/login" element={<Login/>}/>
   </Routes>
   </BrowserRouter>

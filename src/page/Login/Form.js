@@ -96,7 +96,7 @@ const FormLogin = () => {
       }}
     >
       <Button type="primary" className='bg-orange-600' htmlType="submit">
-        Submit
+        Đăng nhập
       </Button>
     </Form.Item>
   </Form>
