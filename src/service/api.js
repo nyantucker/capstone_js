@@ -1,5 +1,6 @@
 import axios, { Axios } from "axios"
 import {BASE_URL, configHeaders, TOKEN_CYBER} from './config';
+import { userLocalStorage } from "./localStorage";
 
 export let getListMovie = () => { 
     return axios ({
@@ -53,3 +54,14 @@ export let getUserInfo = (token) => {
         },
         })
  }
+
+ export let bookingTicket = (danhSachVe) => { 
+    return axios ({
+        url: `${BASE_URL}//QuanLyDatVe/DatVe`,
+        method: "POST",
+        headers: {
+            TokenCybersoft: TOKEN_CYBER,
+            Authorization: 'Bearer ' + userLocalStorage.get()?.accessToken,
+        },
+        })
+  }
