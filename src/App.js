@@ -6,6 +6,8 @@ import Login from './page/Login/Login';
 import Layout from './template/Layout';
 import DetailMovie from './page/DetailMovie/DetailMovie';
 import Booking from './page/DetailMovie/ShowTime/Booking/Booking';
+import Register from './page/Register/Register';
+import UserInfo from './page/UserInfo/UserInfo';
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
     <Route path="/" element={<Layout><Home/></Layout>}/>
     <Route path="/movie/:id" element={<Layout><DetailMovie/></Layout>}/>
     <Route path="/movie/lich-chieu/:maLichChieu" element={<Layout><Booking/></Layout>}/>
+    <Route path="/thongtincanhan" element={<Layout><UserInfo/></Layout>}/>
     <Route path="/login" element={<Login/>}/>
+    <Route path="/register" element={<Register/>}/>
   </Routes>
   </BrowserRouter>
 

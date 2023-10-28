@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { userLocalStorage } from '../service/localStorage';
+import { NavLink } from 'react-router-dom';
 
 export default function Header() {
     let {info} = useSelector((state) => { 
@@ -14,20 +15,23 @@ export default function Header() {
     let handleLogin = () => { 
         window.location.href="/login"
      }
+    let handleRegister = () => { 
+        window.location.href="/register"
+     }
     let renderUserNav = () => {
         let classBtn = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
         if (info) {
             return (
             <>
-            <span className='text-xl font-bold dark:text-white text-slate-500 hover:text-blue-600'>{info.hoTen}</span>
-            <button onClick={handleLogout} className={classBtn}>Đăng xuất</button>
+            <NavLink to={"/thongtincanhan"}><span className='text-xl font-bold dark:text-white text-slate-500 hover:text-blue-600'>{info.hoTen}</span></NavLink>
+            <NavLink to={"/"}><button onClick={handleLogout} className={classBtn}>Đăng xuất</button></NavLink>
             </> 
             )
         } else {
             return (
             <>
             <button onClick={handleLogin} className={classBtn}>Đăng nhập</button>
-            <button className={classBtn}>Đăng ký</button>
+            <button onClick={handleRegister} className={classBtn}>Đăng ký</button>
             </>
             )
         }

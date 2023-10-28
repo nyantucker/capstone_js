@@ -1,5 +1,5 @@
 import axios, { Axios } from "axios"
-import { BASE_URL, configHeaders } from "./config"
+import {BASE_URL, configHeaders, TOKEN_CYBER} from './config';
 
 export let getListMovie = () => { 
     return axios ({
@@ -42,4 +42,14 @@ export let getDataSlider = () => {
         method: "GET",
         headers: configHeaders(),
     })
+ }
+export let getUserInfo = (token) => { 
+    return axios ({
+        url: `${BASE_URL}/QuanLyNguoiDung/ThongTinTaiKhoan`,
+        method: "POST",
+        headers: {
+            Authorization: 'Bearer ' + token,
+            TokenCybersoft: TOKEN_CYBER
+        },
+        })
  }

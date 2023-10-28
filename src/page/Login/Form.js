@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Checkbox, Form, Input, message } from 'antd';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { BASE_URL, configHeaders } from '../../service/config';
 import { SET_INFO } from '../../redux/constant/user';
 import { userLocalStorage } from '../../service/localStorage';
@@ -33,7 +33,7 @@ const FormLogin = () => {
               });
       };
  return <Form
-    className="w-1/2"
+    className="lg:w-1/2"
     layout='vertical'
     name="basic"
     labelCol={{
@@ -87,6 +87,7 @@ const FormLogin = () => {
       }}
     >
       <Checkbox>Ghi nhớ tài khoản</Checkbox>
+      
     </Form.Item>
 
     <Form.Item
@@ -98,7 +99,11 @@ const FormLogin = () => {
       <Button type="primary" className='bg-orange-600' htmlType="submit">
         Đăng nhập
       </Button>
+      <NavLink to={"/register"} type="primary" className='text-black underline shadow ml-[150px] font-medium'>
+        Đăng ký
+      </NavLink>
     </Form.Item>
+
   </Form>
 };
 export default FormLogin;
