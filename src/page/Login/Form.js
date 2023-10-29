@@ -26,7 +26,8 @@ const FormLogin = () => {
         dispatch(action)
         userLocalStorage.set(res.data.content)
         message.success("Đăng nhập thành công")
-        navigate("/")
+        res.data.content.maLoaiNguoiDung=="QuanTri"?navigate("/admin"):navigate("/")
+        // navigate("/")
               })
     .catch((err) => {
         message.error("Tài khoản mật khẩu không đúng")

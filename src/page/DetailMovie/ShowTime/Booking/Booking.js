@@ -7,15 +7,12 @@ export default function Booking() {
     let params = useParams()
     const [thongTinPhim,setthongTinPhim] = useState([])
     const [danhSachGhe,setDanhSachGhe] = useState([])
-    const datVe = {
-        maLichChieu: params.maLichChieu,
-        danhSachVe: [],
-     }
-    console.log(params);
+    
+    // console.log(params);
     useEffect(() => {
         getDsPhongVe(params.maLichChieu)
         .then((res) => {
-                console.log(res.data.content);
+                // console.log(res.data.content);
                 setDanhSachGhe(res.data.content.danhSachGhe)
                 setthongTinPhim(res.data.content.thongTinPhim)
               })
@@ -23,19 +20,39 @@ export default function Booking() {
                console.log(err);
               });
     }, []);
-    console.log(danhSachGhe,thongTinPhim);
+    console.log(danhSachGhe);
+    const [tramgThaiGhe,setTramgThaiGhe] = useState(danhSachGhe)
+    console.log(tramgThaiGhe);
+    // Định nghĩa class button
+    let btnGheThuong = "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-4 px-4 border border-blue-500 hover:border-transparent rounded"
+    let btnGheVip = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 border border-blue-700 rounded"
+    let btnGheDaDat = "bg-gray-300 text-white font-bold py-4 px-4 rounded opacity-50 cursor-not-allowed"
+    let btnGheChon = "bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-4 px-4 border border-yellow-700 rounded"
     
-    let handleDanhSachGhe = () => { 
-        return danhSachGhe.map((ghe) => { 
-            if (ghe.loaiGhe == "Thuong") {
-                return <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-4 px-4 border border-blue-500 hover:border-transparent rounded' style={{backgroundColor:""}}>{ghe.tenGhe}</button>
-            } else if (ghe.loaiGhe == "Vip") {
-                return <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 border border-blue-700 rounded">{ghe.tenGhe}</button>
-            } else if (ghe.daDat == false) {
-                return <button className="bg-gray-300 text-white font-bold py-4 px-4 rounded opacity-50 cursor-not-allowed">X</button>
-            }
-         })
-     }
+    let handleGetSeat = (ghe) => { 
+        console.log(ghe.taiKhoanNguoiDat);
+        return true
+    }
+
+
+    let handleClassBTN= (ghe) => {
+        let classBTN
+        if (ghe.loaiGhe == "Thuong") {
+            classBTN = btnGheThuong
+        } else if (ghe.loaiGhe == "Vip") {
+            classBTN = btnGheVip
+        }  else if (ghe.daDat == true) {
+            classBTN = btnGheDaDat
+        }
+            return classBTN
+    }
+
+     let handleDanhSachGhe = () => { 
+        return danhSachGhe.map((ghe,index) => { 
+            return <button onClick={() => {handleGetSeat(ghe)}} className={handleClassBTN(ghe)}>{ghe.tenGhe}</button>
+        })}
+
+
      let renderBookng = () => { 
         return <div>
             <img src={thongTinPhim.hinhAnh}/>
