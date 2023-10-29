@@ -8,6 +8,11 @@ import DetailMovie from './page/DetailMovie/DetailMovie';
 import Booking from './page/DetailMovie/ShowTime/Booking/Booking';
 import Register from './page/Register/Register';
 import UserInfo from './page/UserInfo/UserInfo';
+import PrivateRoute from './template/PrivateRoute';
+import AdminLayout from './template/AdminLayout';
+import MoviePage from './page/Admin/MoviePage/MoviePage';
+import Admin from './page/Admin/Admin';
+import UserPage from './page/Admin/UserPage/UserPage';
 
 function App() {
   return (
@@ -19,6 +24,11 @@ function App() {
     <Route path="/thongtincanhan" element={<Layout><UserInfo/></Layout>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/register" element={<Register/>}/>
+    <Route path="" element={<AdminLayout/>}>
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/user" element={<UserPage/>} />
+            <Route path="/admin/movie" element={<MoviePage />} />
+    </Route>
   </Routes>
   </BrowserRouter>
 

@@ -23,7 +23,7 @@ export default function Header() {
         if (info) {
             return (
             <>
-            <NavLink to={"/thongtincanhan"}><span className='text-xl font-bold dark:text-white text-slate-500 hover:text-blue-600'>{info.hoTen}</span></NavLink>
+            <NavLink to={info.maLoaiNguoiDung=="QuanTri"?"/admin":"/thongtincanhan"}><span className='text-xl font-bold dark:text-white text-slate-500 hover:text-blue-600'>{info.hoTen}</span></NavLink>
             <NavLink to={"/"}><button onClick={handleLogout} className={classBtn}>Đăng xuất</button></NavLink>
             </> 
             )

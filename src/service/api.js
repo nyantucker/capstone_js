@@ -65,3 +65,43 @@ export let getUserInfo = (token) => {
         },
         })
   }
+export let getDsPhim = () => { 
+    return axios ({
+        url: `${BASE_URL}/QuanLyPhim/LayDanhSachPhim?maNhom=GP09`,
+        method: "GET",
+        headers: {
+            TokenCybersoft: TOKEN_CYBER,
+            Authorization: 'Bearer ' + userLocalStorage.get()?.accessToken,
+        },
+        })
+ }
+export let deletePhim = (maPhim) => { 
+    return axios ({
+        url: `${BASE_URL}/QuanLyPhim/XP?MaPhim=${maPhim}`,
+        method: "DELETE",
+        headers: {
+            TokenCybersoft: TOKEN_CYBER,
+            Authorization: 'Bearer ' + userLocalStorage.get()?.accessToken,
+        },
+        })
+ }
+export let getListUser = () => { 
+    return axios ({
+        url: `${BASE_URL}/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP00`,
+        method: "GET",
+        headers: {
+            TokenCybersoft: TOKEN_CYBER,
+            Authorization: 'Bearer ' + userLocalStorage.get()?.accessToken,
+        },
+        })
+ }
+export let deleteUser = (taiKhoan) => { 
+    return axios ({
+        url: `${BASE_URL}/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${taiKhoan}`,
+        method: "DELETE",
+        headers: {
+            TokenCybersoft: TOKEN_CYBER,
+            Authorization: 'Bearer ' + userLocalStorage.get()?.accessToken,
+        },
+        })
+ }

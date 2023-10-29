@@ -25,33 +25,14 @@ export default function Booking() {
     }, []);
     console.log(danhSachGhe,thongTinPhim);
     
-    let handleGetGhe = (ghe) => { 
-        console.log(datVe);
-        console.log(ghe);
-        return  datVe.danhSachVe.push({
-            "maGhe":ghe.maGhe,
-            "giaVe":ghe.giaVe
-        })
-    }
-
-    let handleBooking = (danhSachVe) => { 
-        bookingTicket(danhSachVe)
-        .then((res) => {
-                console.log(res);
-              })
-        .catch((err) => {
-               console.log(err);
-              });
-       }
-    
     let handleDanhSachGhe = () => { 
         return danhSachGhe.map((ghe) => { 
             if (ghe.loaiGhe == "Thuong") {
-                return <button onClick={() => { handleGetGhe(ghe) }} className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-4 px-4 border border-blue-500 hover:border-transparent rounded' style={{backgroundColor:""}}>{ghe.tenGhe}</button>
+                return <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-4 px-4 border border-blue-500 hover:border-transparent rounded' style={{backgroundColor:""}}>{ghe.tenGhe}</button>
             } else if (ghe.loaiGhe == "Vip") {
-                return <button onClick={() => { handleGetGhe(ghe) }} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 border border-blue-700 rounded">{ghe.tenGhe}</button>
+                return <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 border border-blue-700 rounded">{ghe.tenGhe}</button>
             } else if (ghe.daDat == false) {
-                return <button class="bg-gray-300 text-white font-bold py-4 px-4 rounded opacity-50 cursor-not-allowed">X</button>
+                return <button className="bg-gray-300 text-white font-bold py-4 px-4 rounded opacity-50 cursor-not-allowed">X</button>
             }
          })
      }
@@ -84,7 +65,7 @@ export default function Booking() {
                 <p>{}</p>
             </div>
             <div className='flex justify-center'>
-                <button onClick={() => { handleBooking(datVe) }} className='text-center bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded'>Đặt vé</button>
+                <button className='text-center bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded'>Đặt vé</button>
             </div>
         </div>
       }
