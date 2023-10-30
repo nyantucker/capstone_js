@@ -24,7 +24,7 @@ function App() {
     <Route path="/thongtincanhan" element={<Layout><UserInfo/></Layout>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/register" element={<Register/>}/>
-    <Route path="" element={<AdminLayout/>}>
+    <Route path="" element={<PrivateRoute><AdminLayout/></PrivateRoute>}>
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/user" element={<UserPage/>} />
             <Route path="/admin/movie" element={<MoviePage />} />

@@ -9,8 +9,8 @@ export default function Header() {
      })
     console.log(info);
     let handleLogout = () => { 
-        userLocalStorage.remove();
-        window.location.reload()
+        userLocalStorage.remove()
+        window.location.href="/"
      }
     let handleLogin = () => { 
         window.location.href="/login"

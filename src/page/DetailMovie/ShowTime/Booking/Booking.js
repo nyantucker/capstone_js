@@ -56,7 +56,7 @@ export default function Booking() {
      let renderBookng = () => { 
         return <div>
             <img src={thongTinPhim.hinhAnh}/>
-            <h1 className='text-center'>80000000</h1>
+            <h1 className='text-center'></h1>
             <div className='flex justify-between'>
                 <p>Cụm rạp</p>
                 <p>{thongTinPhim.tenCumRap}</p>
