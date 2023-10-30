@@ -22,10 +22,10 @@ const items2 = [LaptopOutlined , UserOutlined].map(
       key: `sub${key}`,
       icon: React.createElement(icon),
       label: <NavLink to={`/admin/${title[key-1].toLowerCase()}`}>{title[key-1]}</NavLink>,
-      // children: [
-      //   {key: index*2+1, label: <NavLink to={`/admin/${title[key-1].toLowerCase()}/add`}>Thêm</NavLink>},
-      //   {key: index*2+2, label: <NavLink to={`/admin/${title[key-1].toLowerCase()}/edit`}>Sửa</NavLink>},
-      // ]
+      children: [
+        {key: index+1, label: <NavLink to={`/admin/${title[key-1].toLowerCase()}/add`}>Thêm</NavLink>},
+        // {key: index*2+2, label: <NavLink to={`/admin/${title[key-1].toLowerCase()}/edit`}>Sửa</NavLink>},
+      ]
     };
   }
 );

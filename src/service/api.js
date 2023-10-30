@@ -105,3 +105,13 @@ export let deleteUser = (taiKhoan) => {
         },
         })
  }
+export let addPhim = (data) => { 
+    return axios ({
+        url: `${BASE_URL}/QuanLyPhim/ThemPhimUploadHinh`,
+        method: "POST",
+        headers: {
+            TokenCybersoft: TOKEN_CYBER,
+            Authorization: 'Bearer ' + userLocalStorage.get()?.accessToken,
+        },
+        })
+ }

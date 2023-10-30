@@ -13,6 +13,8 @@ import AdminLayout from './template/AdminLayout';
 import MoviePage from './page/Admin/MoviePage/MoviePage';
 import Admin from './page/Admin/Admin';
 import UserPage from './page/Admin/UserPage/UserPage';
+import AddMovie from './page/Admin/MoviePage/AddMovie/AddMovie';
+import AddUser from './page/Admin/UserPage/AddUser/AddUser';
 
 function App() {
   return (
@@ -27,7 +29,9 @@ function App() {
     <Route path="" element={<PrivateRoute><AdminLayout/></PrivateRoute>}>
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/user" element={<UserPage/>} />
+            <Route path="/admin/user/add" element={<AddUser/>} />
             <Route path="/admin/movie" element={<MoviePage />} />
+            <Route path="/admin/movie/add" element={<AddMovie />} />
     </Route>
   </Routes>
   </BrowserRouter>
